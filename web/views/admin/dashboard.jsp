@@ -19,6 +19,7 @@
 
         <title>Admin - Dashboard Manager</title>
 
+
         <!-- Custom fonts for this template-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" 
               integrity="sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" 
@@ -33,6 +34,13 @@
         <link href="${pageContext.request.contextPath}/css/sb-admin.css" rel="stylesheet">
 
         <link href="${pageContext.request.contextPath}/css/colReorder-bootstrap4.css" rel="stylesheet">
+
+        <style>
+            .error{
+                color:red;
+            }
+        </style>
+
 
     </head>
 
@@ -62,6 +70,7 @@
                                 <i class="fas fa-table"></i>
                                 Data Table Example
                             </div>
+
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -74,26 +83,40 @@
                                                 <th>Price</th>
                                                 <th>Category</th>
                                                 <th>Description</th>
+                                                <th>Manager</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <c:forEach items="${listProduct}" var="p">
                                             <tr>
-                                                <td>${p.id}</td>
-                                                <td>${p.name}</td>
-                                                <td>
+                                                <td name="id">${p.id}</td>
+                                                <td name="name">${p.name}</td>
+                                                <td name="image">
                                                     <img src="${p.image}" width="100" height="100"/>
                                                 </td>
-                                                <td>${p.quantity}</td>
-                                                <td>${p.price}</td>
-                                                <td>
+                                                <td name="quantity">${p.quantity}</td>
+                                                <td name="price">${p.price}</td>
+                                                <td name="category">
                                                     <c:forEach items="${listCategory}" var="c">
                                                         <c:if test="${c.id == p.categoryId}">
                                                             ${c.name}
                                                         </c:if>
                                                     </c:forEach>
                                                 </td>
-                                                <td>${p.description}</td>
+                                                <td name="description">${p.description}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary"
+                                                            data-toggle="modal" 
+                                                            data-target="#editProductModal"
+                                                            onclick="editProductModal(this)">
+                                                        Edit
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger" 
+                                                            data-toggle="modal" data-target="#delete-product-modal"
+                                                            onclick="deleteProductModal(${p.id})">
+                                                        Delete
+                                                    </button>                                                
+                                                </td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
@@ -105,8 +128,10 @@
 
                 </div>
                 <!-- /.container-fluid -->
+                <jsp:include page="../admin/editProductModal.jsp"></jsp:include>
+                <jsp:include page="../admin/deleteProductModal.jsp"></jsp:include>
 
-                <!-- Sticky Footer -->
+                    <!-- Sticky Footer -->
                 <jsp:include page="../common/admin/footer.jsp"></jsp:include>
 
                 </div>
@@ -123,8 +148,14 @@
         <!-- Logout Modal-->
         <jsp:include page="../common/admin/logoutModal.jsp"></jsp:include>
 
+        <jsp:include page="addProductModal.jsp"></jsp:include>
+
             <!-- Bootstrap core JavaScript-->
             <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
         <script src="${pageContext.request.contextPath}/vendor-admin/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->

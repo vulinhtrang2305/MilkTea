@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller;
+package controller.homePage;
 
 import constant.CommonConst;
 import dal.implement.CategoryDAO;
@@ -96,7 +96,7 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.sendRedirect("home");
     }
 
     private List<Product> findProductDoGet(HttpServletRequest request, PageControl pageControl) {
@@ -115,16 +115,16 @@ public class HomeController extends HttpServlet {
             if(page <= 0) {
                 page = 1;
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             page = 1;
         }
         
         // get ve thang search ben home.jsp
-        String actionSearch = request.getParameter("search") == null
+        String actionSearch = request.getParameter("action") == null
                             ? "default"
-                            : request.getParameter("search");
+                            : request.getParameter("action");
         
-        //get ve request url
+        //  get ve request url
         String requestURL = request.getRequestURL().toString();
         
         // get ve list product DAO

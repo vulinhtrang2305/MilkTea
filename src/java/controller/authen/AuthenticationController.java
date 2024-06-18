@@ -31,7 +31,10 @@ public class AuthenticationController extends HttpServlet {
             case "log-out":
                 url = logOut(request, response);
                 break;
-
+            
+            case "register":
+                url = "views/authen/register.jsp";
+                break;
             default:
                 url = "home";
         }
@@ -53,6 +56,10 @@ public class AuthenticationController extends HttpServlet {
         switch (action) {
             case "login":
                 url = loginDoPost(request, response);
+                break;
+                
+            case "register":
+                url = register(request,response);
                 break;
             default:
                 url = "home";
@@ -99,6 +106,35 @@ public class AuthenticationController extends HttpServlet {
             url = "views/authen/login.jsp";
         }
 
+        return url;
+    }
+
+    private String register(HttpServletRequest request, HttpServletResponse response) {
+        // url de xem di ve trang nao
+        String url;
+        
+        // get ve thong tin nguoi dung nhap vao
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        Account account = Account.builder()
+                        .username(username)
+                        .password(password)
+                        .build();
+        // ktra xem username da ton tai trong DB hay chua
+        boolean isExistUsername = accountDao.findByUsername(account);
+        
+        // true > da ton tai trong db > bao loi > quay tro lai trang register
+        if(isExistUsername) {
+            request.setAttribute("error", "this username has been register befor");
+            url = "views/authen/register.jsp";
+        } else {
+            // false > add new user vao DB > quay tro lai trang home
+            
+            // ghi vao DB
+            accountDao.insert(account);
+            url = "home";
+        }
         return url;
     }
 }

@@ -82,65 +82,61 @@
                         </div>
                         <div class="offset-lg-2 col-lg-8 col-md-12 col-12">
                             <div class="billing-fields">
-                                <div class="row">
-                                    <div class="">
-                                        <div class="single-register">
-                                            <form action="#">
-                                                <label style="font-size: 18px">NAME<span>*</span></label>
-                                                <input type="text" placeholder="name"/>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single-register">
-                                    <form action="#">
-                                        <label style="font-size: 18px">ACCOUNT PASSWORD<span>*</span></label>
-                                        <input type="password" placeholder="Password" />
+                                <div class="billing-fields">
+                                    <div class="single-register">
+                                        <form action="authen?action=register" method="POST" id="registerForm">
+                                            <label style="font-size: 18px">NAME<span>*</span></label>
+                                            <input type="text" placeholder="name" name="username"/>
+                                            <br>
+                                            <br>
+                                            <label style="font-size: 18px">ACCOUNT PASSWORD<span>*</span></label>
+                                            <input type="password" placeholder="Password" name="password"/>
+                                            <span style="color: red">${error}</span>
                                     </form>
                                 </div>
                                 <div class="single-register">
-                                    <a href="${pageContext.request.contextPath}/#">Register</a>
+                                    <a href="#" onclick="document.getElementById('registerForm').submit()">Register</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- user-login-area-end -->
-        <!-- footer-area-start -->
-        <jsp:include page="../common/footer.jsp"></jsp:include>
-            <!-- footer-area-end -->
+            <!-- user-login-area-end -->
+            <!-- footer-area-start -->
+            <jsp:include page="../common/footer.jsp"></jsp:include>
+                <!-- footer-area-end -->
 
 
-            <!-- all js here -->
-            <!-- jquery latest version -->
-            <script src="${pageContext.request.contextPath}/js/vendor/jquery-1.12.4.min.js"></script>
+                <!-- all js here -->
+                <!-- jquery latest version -->
+                <script src="${pageContext.request.contextPath}/js/vendor/jquery-1.12.4.min.js"></script>
 
 
-        <!-- bootstrap js -->
-        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
-        <!-- owl.carousel js -->
-        <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
-        <!-- meanmenu js -->
-        <script src="${pageContext.request.contextPath}/js/jquery.meanmenu.js"></script>
-        <!-- wow js -->
-        <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
-        <!-- jquery.parallax-1.1.3.js -->
-        <script src="${pageContext.request.contextPath}/js/jquery.parallax-1.1.3.js"></script>
-        <!-- jquery.countdown.min.js -->
-        <script src="${pageContext.request.contextPath}/js/jquery.countdown.min.js"></script>
-        <!-- jquery.flexslider.js -->
-        <script src="${pageContext.request.contextPath}/js/jquery.flexslider.js"></script>
-        <!-- chosen.jquery.min.js -->
-        <script src="${pageContext.request.contextPath}/js/chosen.jquery.min.js"></script>
-        <!-- jquery.counterup.min.js -->
-        <script src="${pageContext.request.contextPath}/js/jquery.counterup.min.js"></script>
-        <!-- waypoints.min.js -->
-        <script src="${pageContext.request.contextPath}/js/waypoints.min.js"></script>
-        <!-- plugins js -->
-        <script src="${pageContext.request.contextPath}/js/plugins.js"></script>
-        <!-- main js -->
-        <script src="${pageContext.request.contextPath}/js/main.js"></script>
+            <!-- bootstrap js -->
+            <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+            <!-- owl.carousel js -->
+            <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
+            <!-- meanmenu js -->
+            <script src="${pageContext.request.contextPath}/js/jquery.meanmenu.js"></script>
+            <!-- wow js -->
+            <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
+            <!-- jquery.parallax-1.1.3.js -->
+            <script src="${pageContext.request.contextPath}/js/jquery.parallax-1.1.3.js"></script>
+            <!-- jquery.countdown.min.js -->
+            <script src="${pageContext.request.contextPath}/js/jquery.countdown.min.js"></script>
+            <!-- jquery.flexslider.js -->
+            <script src="${pageContext.request.contextPath}/js/jquery.flexslider.js"></script>
+            <!-- chosen.jquery.min.js -->
+            <script src="${pageContext.request.contextPath}/js/chosen.jquery.min.js"></script>
+            <!-- jquery.counterup.min.js -->
+            <script src="${pageContext.request.contextPath}/js/jquery.counterup.min.js"></script>
+            <!-- waypoints.min.js -->
+            <script src="${pageContext.request.contextPath}/js/waypoints.min.js"></script>
+            <!-- plugins js -->
+            <script src="${pageContext.request.contextPath}/js/plugins.js"></script>
+            <!-- main js -->
+            <script src="${pageContext.request.contextPath}/js/main.js"></script>
     </body>
 
 </html>

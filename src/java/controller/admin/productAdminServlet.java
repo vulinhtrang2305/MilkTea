@@ -45,11 +45,17 @@ public class productAdminServlet extends HttpServlet {
             case "add":
                 addProduct(request);
                 break;
+            case "delete":
+                deleteProduct(request);
+                break;
+            case "edit":
+                editProduct(request);
+                break;
             default:
-                
+
         }
         response.sendRedirect("dashboard");
-        }
+    }
 
     private void addProduct(HttpServletRequest request) {
         try {
@@ -59,7 +65,7 @@ public class productAdminServlet extends HttpServlet {
             int categoryId = Integer.parseInt(request.getParameter("category"));
             String description = request.getParameter("description");
             
-
+                
             // get image
             Part part = request.getPart("image");
 
@@ -107,6 +113,63 @@ public class productAdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    }
+
+    private void deleteProduct(HttpServletRequest request) {
+        //get ve id
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        // delete in db
+        proDao.deleteById(id);
+    }
+
+    private void editProduct(HttpServletRequest request) {
+        try {
+            // get ve id can edit
+            int id = Integer.parseInt(request.getParameter("id"));
+            String name = request.getParameter("name");
+            float price = Float.parseFloat(request.getParameter("price"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            int categoryId = Integer.parseInt(request.getParameter("category"));
+            String description = request.getParameter("description");
+            
+            //image
+            Part part = request.getPart("image");
+            String imagePath = null;
+            if (part.getSubmittedFileName() == null
+                    || part.getSubmittedFileName().trim().isEmpty()
+                    || part == null) {
+                imagePath = request.getParameter("currentImage");
+            } else {
+                // duong dan luu anh
+                String path = request.getServletContext().getRealPath("/images");
+                File dir = new File(path);
+                // xem duongd an nay ton tai chua
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+
+                File image = new File(dir, part.getSubmittedFileName());
+                // ghi file vao trong duong dan
+                part.write(image.getAbsolutePath());
+                // lay ra cai context path cua project
+                imagePath = request.getContextPath() + "/images/" + image.getName();
+            }
+            
+            Product product = Product.builder()
+                    .name(name)
+                    .price(price)
+                    .quantity(quantity)
+                    .description(description)
+                    .categoryId(categoryId)
+                    .image(imagePath)
+                    .build();
+            
+            proDao.update(product);
+
+        } catch (NumberFormatException | IOException | ServletException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

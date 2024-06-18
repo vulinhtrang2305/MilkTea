@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PRJ301/MilkTea/src/java/dal/GenericDAO.java</file>
-            <file>file:/D:/PRJ301/MilkTea/src/java/dal/DBContext.java</file>
+            <file>file:/D:/PRJ301/MilkTea/web/views/authen/login.jsp</file>
+            <file>file:/D:/PRJ301/MilkTea/src/java/controller/admin/productAdminServlet.java</file>
+            <file>file:/D:/PRJ301/MilkTea/web/views/common/header-top-area.jsp</file>
+            <file>file:/D:/PRJ301/MilkTea/src/java/controller/homePage/HomeController.java</file>
+            <file>file:/D:/PRJ301/MilkTea/src/java/dal/implement/AccountDAO.java</file>
+            <file>file:/D:/PRJ301/MilkTea/src/java/controller/authen/AuthenticationController.java</file>
         </group>
     </open-files>
 </project-private>

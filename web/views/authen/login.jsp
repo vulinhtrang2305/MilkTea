@@ -89,8 +89,8 @@
                                 <p>LOGIN TO ORDER YOUR BOBA</p>
                             </div>
                         </div>
-                        <div class="offset-lg-3 col-lg-6 col-md-12 col-12">
-                            <form action="#" method="POST">
+                        <div class="offset-lg-3 col-lg-6 col-md-12 col-12"> 
+                            <form action="authen?action=login" method="POST">
                                 <div class="login-form">
                                     <div class="single-login">
                                         <label>USERNAME OR EMAIL<span>*</span></label>
@@ -98,11 +98,14 @@
                                     </div>
                                     <div class="single-login">
                                         <label>PASSWORDS <span>*</span></label>
-                                        <input type="text" name="password"/>
+                                        <input type="password" name="password"/>
                                     </div>
                                     <div class="single-login single-login-2">
                                         <a href="#" onclick="return this.closest('form').submit()">login</a>
                                     </div>
+                                    <span style="color: red">${error}</span>
+                                    <br>
+                                    <a href="#">Lost your password?</a>
                                 </div>
                             </form>
                         </div>
