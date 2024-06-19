@@ -36,7 +36,18 @@
                     <ul>
                         <!--Account-->
                         <c:if test="${account!=null}">
-                            <li><a href="my-account.html">My Account</a></li>
+                            <!--nguoi dung-->
+                            <c:if test="${account.roleId==2}">
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/dashboard">My Account</a>
+                                </li>    
+                            </c:if>
+                            <!--admin-->
+                            <c:if test="${account.roleId==1}">
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/admin/dashboard">My Account</a>
+                                </li>    
+                            </c:if>
                         </c:if>
                         <!--check out-->
                         <li><a href="checkout.html">Checkout</a></li>
