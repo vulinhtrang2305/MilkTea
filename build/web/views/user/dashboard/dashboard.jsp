@@ -16,126 +16,156 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>USER DASHBOARD</title>
-
-        <!-- Custom fonts for this template-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" 
-              integrity="sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" 
-              crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>USER MANAGER DASHBOARD</title>
 
         <!-- Custom fonts for this template-->
         <link href="${pageContext.request.contextPath}/vendor-admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+        
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" 
+              integrity="sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" 
+              crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
         <!-- Page level plugin CSS-->
-        <link href="${pageContext.request.contextPath}/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/vendor-admin/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
         <!-- Custom styles for this template-->
         <link href="${pageContext.request.contextPath}/css/sb-admin.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/colReorder-bootstrap4.css">
+        <link rel="stylesheet" href="css/colReorder-bootstrap4.css">
+        
+         <style>
+            .error{
+                color:red;
+            }
+        </style>
 
     </head>
 
     <body id="page-top">
 
-        <jsp:include page="../../common/admin/navbar.jsp"></jsp:include>
+        <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-            <div id="wrapper">
+            <a class="navbar-brand mr-1" href="index.html">USER MANAGER</a>
 
-                <!-- Sidebar -->
-            <jsp:include page="../../common/admin/sideBar.jsp"></jsp:include>
+            <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+                <i class="fas fa-bars"></i>
+            </button>
 
-                <div id="content-wrapper">
-
-                    <div class="container-fluid">
-
-                        <!-- Breadcrumbs-->
-                    <jsp:include page="../../common/admin/breadCrumbs.jsp"></jsp:include>
-
-                        <!-- Icon Cards-->
-                    <jsp:include page="../../common/admin/iconCards.jsp"></jsp:include>
-
-                        <!-- Area Chart Example-->
-                        <!--                    <div class="card mb-3">
-                                                <div class="card-header">
-                                                    <i class="fas fa-chart-area"></i> Area Chart Example
-                                                </div>
-                                                <div class="card-body">
-                                                    <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                                                </div>
-                                                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                                            </div>-->
-
-                        <!-- DataTables Example -->
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <i class="fas fa-table"></i> Data Table Example
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                        </div>
-
+            <!-- Navbar Search -->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
-                    <!-- /.container-fluid -->
+                </div>
+            </form>
 
-                    <!-- Sticky Footer -->
+            <!-- Navbar -->
+            <jsp:include page="../../common/user/navbar.jsp"></jsp:include>
 
+        </nav>
+
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+        <jsp:include page="../../common/user/sidebar.jsp"></jsp:include>
+
+            <div id="content-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Breadcrumbs-->
+                <jsp:include page="../../common/user/breadcrums.jsp"></jsp:include>
+
+                    <!-- Icon Cards-->
+                <jsp:include page="../../common/user/iconCards.jsp"></jsp:include>
+
+                    <!-- Area Chart Example-->
+<!--                    <div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area"></i> Area Chart Example
+                        </div>
+                        <div class="card-body">
+                            <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                        </div>
+                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    </div>-->
+
+                    <!-- DataTables Example -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <i class="fas fa-table"></i> Data Table Example
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>63</td>
+                                            <td>2011/07/25</td>
+                                            <td>$170,750</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    </div>
 
                 </div>
-                <!-- /.content-wrapper -->
+                <!-- /.container-fluid -->
 
+                <!-- Sticky Footer -->
+            <jsp:include page="../../common/user/footer.jsp"></jsp:include>
             </div>
-            <!-- /#wrapper -->
+            <!-- /.content-wrapper -->
 
+        </div>
+        <!-- /#wrapper -->
 
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-            <!-- Logout Modal-->
-        <jsp:include page="../../common/admin/logoutModal.jsp"></jsp:include>
+        <!-- Logout Modal-->
+            <jsp:include page="../../common/user/logoutModal.jsp"></jsp:include>
 
-            <!-- Bootstrap core JavaScript-->
-        <script src="${pageContext.request.contextPath}/vendor/jquery/jquery.min.js"></script>
-        <script src="${pageContext.request.contextPath}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="${pageContext.request.contextPath}/vendor-admin/jquery/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/vendor-admin/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="${pageContext.request.contextPath}/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="${pageContext.request.contextPath}/vendor-admin/jquery-easing/jquery.easing.min.js"></script>
 
         <!-- Page level plugin JavaScript-->
-        <script src="${pageContext.request.contextPath}/vendor/chart.js/Chart.min.js"></script>
-        <script src="${pageContext.request.contextPath}/vendor/datatables/jquery.dataTables.js"></script>
-        <script src="${pageContext.request.contextPath}/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <script src="${pageContext.request.contextPath}/vendor-admin/chart.js/Chart.min.js"></script>
+        <script src="${pageContext.request.contextPath}/vendor-admin/datatables/jquery.dataTables.js"></script>
+        <script src="${pageContext.request.contextPath}/vendor-admin/datatables/dataTables.bootstrap4.js"></script>
 
         <!-- Custom scripts for all pages-->
         <script src="${pageContext.request.contextPath}/js/sb-admin.min.js"></script>
