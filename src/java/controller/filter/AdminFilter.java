@@ -112,7 +112,7 @@ public class AdminFilter implements Filter {
         //ktra xem da dang nhap hay chua (account da ton tai tren session)
         if (session.getAttribute("account") == null) {
             //null > chua dang nhap
-            resp.sendRedirect(req.getContextPath() + "authen?action=login");
+            resp.sendRedirect(req.getContextPath() + "/authen?action=login");
             return;
         } else {
             // da dang nhap r
@@ -120,7 +120,7 @@ public class AdminFilter implements Filter {
             Account account = (Account) session.getAttribute("account");
 
             if (account.getRoleId() != '1') {
-                resp.sendRedirect(req.getContextPath() + "authen?action=login");
+                resp.sendRedirect(req.getContextPath() + "/authen?action=login");
                 return;
             }
         }

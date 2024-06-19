@@ -45,7 +45,7 @@
                             <!--admin-->
                             <c:if test="${account.roleId==1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/dashboard">My Account</a>
+                                    <a href="${pageContext.request.contextPath}/views/admin/dashboard.jsp">My Account</a>
                                 </li>    
                             </c:if>
                         </c:if>
@@ -60,7 +60,7 @@
                         </c:if>
                         <!--sign out-->
                         <c:if test="${account!=null}">
-                            <li><a href="authen?action=log-out">Sign Out</a></li>
+                            <li><a href="${pageContext.request.contextPath}/authen?action=log-out">Sign Out</a></li>
                         </c:if>
                     </ul>
                 </div>
