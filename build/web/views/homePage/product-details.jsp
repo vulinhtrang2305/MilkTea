@@ -112,9 +112,9 @@
                                             <form action="payment?action=add-product" method="POST">
                                                 <input type="hidden" name="id" value="${product.id}"/>
                                                 <div class="quality-button">
-                                                    <input class="qty" type="number" value="1">
+                                                    <input class="qty" type="number" name="quantity" value="${product.quantity}">
                                                 </div>
-                                                <a href="/#" onclick="return this.closest('form').submit()">Add to cart</a>
+                                                <a href="#" onclick="return this.closest('form').submit();">Add to cart</a>
                                             </form>
                                         </div>
                                         <div class="product-social-links">
