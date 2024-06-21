@@ -208,13 +208,16 @@ public abstract class GenericDAO<T> extends DBContext {
 
         Class<?> fieldType = field.getType();
         String fieldName = field.getName();
-        
-        if(Collection.class.isAssignableFrom(fieldType)) {
-            return null;
-        } else if(Map.class.isAssignableFrom(fieldType)) {
-            return null;
+       
+         // Kiểm tra xem fieldType có phải là một collection (như List, Set, ...) hay không
+        if (Collection.class.isAssignableFrom(fieldType)) {
+            return null; // Bỏ qua và không xử lý gì nữa
+        } // Kiểm tra xem fieldType có phải là một Map hay không
+        else if (Map.class.isAssignableFrom(fieldType)) {
+            return null; // Bỏ qua và không xử lý gì nữa
         }
-        
+
+       
         // Kiểm tra kiểu dữ liệu và convert sang đúng kiểu
         if (fieldType == String.class) {
             return rs.getString(fieldName);

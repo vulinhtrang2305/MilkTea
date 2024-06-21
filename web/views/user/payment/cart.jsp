@@ -1,10 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-t<%-- 
-    Document   : cart
-    Created on : Jun 19, 2024, 4:20:16 PM
-    Author     : chucken
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -100,20 +94,21 @@ t<%--
                                         </thead>
                                         <tbody>
                                         <c:forEach items="${cart.listOrderDetails}" var="c">
-                                        <tr>
-                                            <c:forEach items="${listProduct}" var="p">
-                                                <c:if test="${p.id==c.productId}">
-                                                    <c:set var="product" value="${p}"></c:set>
+                                            <c:forEach items="${listProduct}" var="product">
+                                                <c:if test="${product.id==c.productId}">
+                                                    <c:set var="p" value="${product}"></c:set>
                                                 </c:if>
-                                            </c:forEach>
-                                            <td> class="product-thumbnail"><a href="#"><img src="${p.image}" alt="man" /></a></td>
-                                            <td class="product-name"><a href="${pageContext.request.contextPath}/#">Vestibulum suscipit</a></td>
-                                            <td class="product-price"><span class="amount">£165.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">£165.00</td>
-                                            <td class="product-remove"><a href="${pageContext.request.contextPath}/#"><i class="fa fa-times"></i></a></td>
-                                            
-                                        </tr>
+                                        </c:forEach>
+                                            <tr>
+                                                <td class="product-thumbnail">
+                                                    <a href="#"><img src="${p.image}" alt="man" /></a>
+                                                </td>
+                                                <td class="product-name"><a href="#">${p.name}</a></td>
+                                                <td class="product-price"><span class="amount">$ ${p.price}</span></td>
+                                                <td class="product-quantity"><input type="text" name="quantity" value="${c.quantity}"></td>
+                                                <td class="product-subtotal">$ ${p.price}</td>
+                                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                                            </tr>
                                         </c:forEach>
                                     </tbody>
                                 </table>
