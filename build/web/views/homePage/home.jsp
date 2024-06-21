@@ -91,14 +91,14 @@
                             </div>
 
                             <div class="left-title mb-20">
-                                <h4>Random</h4>
+                                <h4>SALE MILK TEA</h4>
                             </div>
                             <div class="random-area mb-30">
                                 <div class="product-active-2 owl-carousel">
                                     <div class="product-total-2">
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/20.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -110,7 +110,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Endeavor Daytrip</a></h4>
+                                                <h4><a href="#">Trà Sữa Ô Long Phô Mai Tươi</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/21.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/01/z5200290997827_144ddc3df79a7c923952deb151b146aa.jpg" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -133,7 +133,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Savvy Shoulder Tote</a></h4>
+                                                <h4><a href="#">Kem Ly Dâu Sữa</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -144,7 +144,7 @@
                                         </div>
                                         <div class="single-most-product">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -156,7 +156,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Compete Track Tote</a></h4>
+                                                <h4><a href="#">Xanh Nhài Mãng Cầu Xoài</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$35.00</li>
@@ -168,7 +168,7 @@
                                     <div class="product-total-2">
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/23.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Xoai-Bang-Tuyet.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -180,7 +180,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Voyage Yoga Bag</a></h4>
+                                                <h4><a href="#">Xanh Nhài Băng Tuyết</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -191,7 +191,7 @@
                                         </div>
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/24.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Phe-Tra-Chanh-Vang.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -203,7 +203,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Impulse Duffle</a></h4>
+                                                <h4><a href="#">Trà Chanh Vàng</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$70.00</li>
@@ -214,7 +214,7 @@
                                         </div>
                                         <div class="single-most-product">
                                             <div class="most-product-img">
-                                                <a href="#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
+                                                <a href="#"><img src="https://tocotocotea.com/wp-content/uploads/2024/04/Tra-Xanh-Dao-Que-Hoa.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -226,7 +226,7 @@
                                                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="#">Fusion Backpack</a></h4>
+                                                <h4><a href="#">Trà Xanh Nhài Đào Tiên</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$59.00</li>
@@ -271,34 +271,11 @@
                                 <div class="tab-3">
                                     <ul class="nav">
                                         <li><a class="active" href="#th" data-bs-toggle="tab"><i class="fa fa-th-large"></i>Grid</a></li>
-                                        <li><a href="#list" data-bs-toggle="tab"><i class="fa fa-bars"></i>List</a></li>
                                     </ul>
                                 </div>
                                 <div class="list-page">
                                     <p>Items 1-9 of 11</p>
                                 </div>
-                            </div>
-                            <div class="field-limiter">
-                                <div class="control">
-                                    <span>Show</span>
-                                    <!-- chosen-start -->
-                                    <select data-placeholder="Default Sorting" style="width:50px;" class="chosen-select" tabindex="1">
-                                        <option value="Sorting">1</option>
-                                        <option value="popularity">2</option>
-                                        <option value="rating">3</option>
-                                        <option value="date">4</option>
-                                    </select>
-                                    <!-- chosen-end -->
-                                </div>
-                            </div>
-                            <div class="toolbar-sorter">
-                                <span>Sort By</span>
-                                <select id="sorter" class="sorter-options" data-role="sorter">
-                                    <option selected="selected" value="position"> Position </option>
-                                    <option value="name"> Product Name </option>
-                                    <option value="price"> Price </option>
-                                </select>
-                                <a href="#"><i class="fa fa-arrow-up"></i></a>
                             </div>
                         </div>
                         <!-- tab-area-start -->
@@ -343,19 +320,19 @@
                                     </c:forEach>
                                     <div class="tab-pane fade" id="list">
                                         <!-- single-shop-start -->
-                                        
+
                                         <!-- single-shop-end -->
                                         <!-- single-shop-start -->
-                                        
+
                                         <!-- single-shop-end -->
                                         <!-- single-shop-start -->
-                                        
+
                                         <!-- single-shop-end -->
                                         <!-- single-shop-start -->
-                                        
+
                                         <!-- single-shop-end -->
                                         <!-- single-shop-start -->
-                                        
+
                                         <!-- single-shop-end -->
                                     </div>
                                 </div>
