@@ -56,10 +56,10 @@ public class PaymentController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action") == null
-                ? "default" : request.getParameter("action");  
+                ? "" : request.getParameter("action");  
         
         
-        switch (action) {
+        switch(action) {
             case "add-product":
                 addProduct(request, response);
                 break;
