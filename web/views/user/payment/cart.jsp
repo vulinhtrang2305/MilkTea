@@ -98,15 +98,15 @@
                                                 <c:if test="${product.id==c.productId}">
                                                     <c:set var="p" value="${product}"></c:set>
                                                 </c:if>
-                                        </c:forEach>
+                                            </c:forEach>
                                             <tr>
                                                 <td class="product-thumbnail">
                                                     <a href="#"><img src="${p.image}" alt="man" /></a>
                                                 </td>
                                                 <td class="product-name"><a href="#">${p.name}</a></td>
                                                 <td class="product-price"><span class="amount">$ ${p.price}</span></td>
-                                                <td class="product-quantity"><input type="text" name="quantity" value="${c.quantity}"></td>
-                                                <td class="product-subtotal">$ ${p.price}</td>
+                                                <td class="product-quantity"><input type="number" name="quantity" value="${c.quantity}"></td>
+                                                <td class="product-subtotal">${p.price * c.quantity}</td>
                                                 <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
                                             </tr>
                                         </c:forEach>
@@ -119,17 +119,10 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-6 col-12">
                         <div class="buttons-cart mb-30">
-                            <ul>
-                                <li><a href="${pageContext.request.contextPath}/#">Update Cart</a></li>
-                                <li><a href="${pageContext.request.contextPath}/#">Continue Shopping</a></li>
-                            </ul>
-                        </div>
-                        <div class="coupon">
-                            <h3>Coupon</h3>
-                            <p>Enter your coupon code if you have one.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Coupon code">
-                                <a href="${pageContext.request.contextPath}/#">Apply Coupon</a>
+                            <form action="action">
+                                <ul>
+                                    <li><a href="${pageContext.request.contextPath}/#">Continue Shopping</a></li>
+                                </ul>
                             </form>
                         </div>
                     </div>
@@ -141,7 +134,7 @@
                                     <tr class="cart-subtotal">
                                         <th>Subtotal</th>
                                         <td>
-                                            <span class="amount">£215.00</span>
+                                            <span id="subtotal" class="amount">215</span>
                                         </td>
                                     </tr>
                                     <tr class="shipping">
@@ -149,14 +142,6 @@
                                         <td>
                                             <ul id="shipping_method">
                                                 <li>
-                                                    <input type="radio">
-                                                    <label>
-                                                        Flat Rate:
-                                                        <span class="amount">£7.00</span>
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <input type="radio">
                                                     <label> Free Shipping </label>
                                                 </li>
                                             </ul>
@@ -167,7 +152,7 @@
                                         <th>Total</th>
                                         <td>
                                             <strong>
-                                                <span class="amount">£215.00</span>
+                                                <span id="total" class="amount">$ 111</span>
                                             </strong>
                                         </td>
                                     </tr>
@@ -216,6 +201,24 @@
         <script src="${pageContext.request.contextPath}/js/plugins.js"></script>
         <!-- main js -->
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+
+        <script>
+            window.onload = updateSubtotal();
+            
+            function updateSubtotal() {
+                let totalCart = 0;
+                let totalPriceOfEachProduct = document.querySelectorAll('form td.product-subtotal');
+                totalPriceOfEachProduct.forEach(e => {
+//                    console.log(e.textContent);
+                let totalPrice = parseFloat(e.textContent.trim());
+                totalCart+=totalPrice;
+                });
+                document.querySelector('#subtotal').innerHTML = totalCart + "$";
+                document.querySelector('#total').innerHTML = totalCart + "$";
+            }
+            
+            
+        </script>
     </body>
 
 </html>

@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PRJ301/MilkTea/src/java/controller/user/DashboardUserServlet.java</file>
             <file>file:/D:/PRJ301/MilkTea/web/views/homePage/product-details.jsp</file>
             <file>file:/D:/PRJ301/MilkTea/web/views/user/payment/cart.jsp</file>
-            <file>file:/D:/PRJ301/MilkTea/src/java/controller/admin/DashboardServlet.java</file>
-            <file>file:/D:/PRJ301/MilkTea/src/java/dal/implement/OrderDetailsDAO.java</file>
             <file>file:/D:/PRJ301/MilkTea/src/java/entity/Order.java</file>
             <file>file:/D:/PRJ301/MilkTea/src/java/controller/user/PaymentController.java</file>
             <file>file:/D:/PRJ301/MilkTea/src/java/entity/OrderDetails.java</file>
