@@ -112,7 +112,8 @@
                                             </td>
                                             <td class="product-subtotal">${p.price * c.quantity}</td>
                                             <td class="product-remove">
-                                                <form action="action" method="POST">
+                                                <form action="payment?action=delete" method="POST">
+                                                    <input type="hidden" name="id" value="${p.id}">
                                                     <a href="#" onclick="return this.closest('form').submit()">
                                                         <i class="fa fa-times"></i>
                                                     </a>

@@ -57,6 +57,11 @@ public class PaymentController extends HttpServlet {
             case "change-quantity":
                 changeQuantity(request, response);
                 break;
+
+            case "delete":
+                delete(request, response);
+                break;
+
             default:
                 throw new AssertionError();
         }
@@ -120,10 +125,27 @@ public class PaymentController extends HttpServlet {
                     listOrderDetail.setQuantity(quantity);
                 }
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) {
+        //get ve id
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        HttpSession session = request.getSession();
+        Order cart = (Order) session.getAttribute("cart");
+        
+        OrderDetails od = null;
+        for (OrderDetails obj : cart.getListOrderDetails()) {
+            if(obj.getProductId() == id) {
+                od = obj;
+            }
+        }
+        cart.getListOrderDetails().remove(od);
+        session.setAttribute("cart", cart);
     }
 }
