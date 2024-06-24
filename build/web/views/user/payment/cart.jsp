@@ -15,10 +15,10 @@
 
         <!-- all css here -->
         <!-- bootstrap v3.3.6 css -->
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">-->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" 
               integrity="sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" 
-              crossorigin="anonymous" referrerpolicy="no-referrer" />
+              crossorigin="anonymous" referrerpolicy="no-referrer">
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
         <!-- animate css -->
@@ -37,12 +37,12 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
         <!-- responsive css -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/responsive.css">
-        <!-- modernizr css -->
-        <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3.min.js"></script>
+
     </head>
+
     <body class="cart">
-        <!-- Add your site or application content here -->
-        <!-- header-area-start -->
+
+        <!-- header-area-start-->
         <header>
             <!-- header-top-area-start -->
             <jsp:include page="../../common/header-top-area.jsp"></jsp:include>
@@ -79,41 +79,50 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="#">
-                                <div class="table-content table-responsive mb-15 border-1">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="product-thumbnail">Image</th>
-                                                <th class="product-name">Product</th>
-                                                <th class="product-price">Price</th>
-                                                <th class="product-quantity">Quantity</th>
-                                                <th class="product-subtotal">Total</th>
-                                                <th class="product-remove">Remove</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <c:forEach items="${cart.listOrderDetails}" var="c">
-                                            <c:forEach items="${listProduct}" var="product">
-                                                <c:if test="${product.id==c.productId}">
-                                                    <c:set var="p" value="${product}"></c:set>
-                                                </c:if>
-                                            </c:forEach>
-                                            <tr>
-                                                <td class="product-thumbnail">
-                                                    <a href="#"><img src="${p.image}" alt="man" /></a>
-                                                </td>
-                                                <td class="product-name"><a href="#">${p.name}</a></td>
-                                                <td class="product-price"><span class="amount">$ ${p.price}</span></td>
-                                                <td class="product-quantity"><input type="number" name="quantity" value="${c.quantity}"></td>
-                                                <td class="product-subtotal">${p.price * c.quantity}</td>
-                                                <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
-                                            </tr>
+                            <div class="table-content table-responsive mb-15 border-1">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">Image</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${cart.listOrderDetails}" var="c">
+                                        <c:forEach items="${listProduct}" var="product">
+                                            <c:if test="${product.id==c.productId}">
+                                                <c:set var="p" value="${product}"></c:set>
+                                            </c:if>
                                         </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </form>
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#"><img src="${p.image}" alt="man" /></a>
+                                            </td>
+                                            <td class="product-name"><a href="#">${p.name}</a></td>
+                                            <td class="product-price"><span class="amount">$ ${p.price}</span></td>  
+                                            <td class="product-quantity">
+                                                <form action="payment?action=change-quantity" method="POST">
+                                                    <input type="hidden" name="id" value="${p.id}" />
+                                                    <input type="number" name="quantity" value="${c.quantity}" onchange="return this.closest('form').submit()">
+                                                </form>
+                                            </td>
+                                            <td class="product-subtotal">${p.price * c.quantity}</td>
+                                            <td class="product-remove">
+                                                <form action="action" method="POST">
+                                                    <a href="#" onclick="return this.closest('form').submit()">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -201,23 +210,26 @@
         <script src="${pageContext.request.contextPath}/js/plugins.js"></script>
         <!-- main js -->
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <!-- modernizr css -->
+        <script src="${pageContext.request.contextPath}/js/vendor/modernizr-2.8.3.min.js"></script>
+
 
         <script>
-            window.onload = updateSubtotal();
-            
-            function updateSubtotal() {
-                let totalCart = 0;
-                let totalPriceOfEachProduct = document.querySelectorAll('form td.product-subtotal');
-                totalPriceOfEachProduct.forEach(e => {
+                                                        window.onload = updateSubtotal();
+
+                                                        function updateSubtotal() {
+                                                            let totalCart = 0;
+                                                            let totalPriceOfEachProduct = document.querySelectorAll('td.product-subtotal');
+                                                            totalPriceOfEachProduct.forEach(e => {
 //                    console.log(e.textContent);
-                let totalPrice = parseFloat(e.textContent.trim());
-                totalCart+=totalPrice;
-                });
-                document.querySelector('#subtotal').innerHTML = totalCart + "$";
-                document.querySelector('#total').innerHTML = totalCart + "$";
-            }
-            
-            
+                                                                let totalPrice = parseFloat(e.textContent.trim());
+                                                                totalCart += totalPrice;
+                                                            });
+                                                            document.querySelector('#subtotal').innerHTML = totalCart + "$";
+                                                            document.querySelector('#total').innerHTML = totalCart + "$";
+                                                        }
+
+
         </script>
     </body>
 
