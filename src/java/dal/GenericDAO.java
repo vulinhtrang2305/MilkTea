@@ -68,7 +68,8 @@ public abstract class GenericDAO<T> extends DBContext {
                 | NoSuchMethodException
                 | InvocationTargetException
                 | SQLException e) {
-            System.err.println("4USER: Bắn Exception ở hàm query: " + e.getMessage());
+//            System.err.println(": Bắn Exception ở hàm query: " + e.getMessage());
+ e.printStackTrace();
         } finally {
             try {
                 // Đóng kết nối và các tài nguyên
@@ -88,6 +89,8 @@ public abstract class GenericDAO<T> extends DBContext {
         return result;
     }
 
+    
+    
     /**
      * Hàm này sử dụng để get dữ liệu từ database lên dựa trên tên bảng mà bạn
      * mong muốn Condition (optional) là ám chỉ những giá trị như and hoặc

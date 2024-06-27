@@ -21,4 +21,9 @@ public class RoleDAO extends GenericDAO<Role>{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    public static void main(String[] args) {
+        for (Role role : new RoleDAO().findAll()) {
+            System.out.println(role);
+        }
+    }
 }

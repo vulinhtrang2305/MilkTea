@@ -6,7 +6,6 @@ package dal.implement;
 
 import dal.GenericDAO;
 import entity.Account;
-import static java.util.Collections.list;
 import java.util.LinkedHashMap;
 import java.util.List;
 import org.apache.catalina.util.ParameterMap;

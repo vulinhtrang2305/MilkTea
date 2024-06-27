@@ -17,7 +17,7 @@ public class OrderDAO extends GenericDAO<Order> {
 
     @Override
     public List<Order> findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return queryGenericDAO(Order.class);
     }
 
     @Override
@@ -35,7 +35,12 @@ public class OrderDAO extends GenericDAO<Order> {
         parameterMap.put("1", t.getAmount());
         parameterMap.put("2", t.getAccountId());
         parameterMap.put("3", t.getCreateAt());
-        return insertGenericDAO(sql, parameterMap);
+        return insertGenericDAO(t);
     }
-
+    
+    public static void main(String[] args) {
+        for (Order order : new OrderDAO().findAll()) {
+            System.out.println(order);  
+        }
+    }
 }

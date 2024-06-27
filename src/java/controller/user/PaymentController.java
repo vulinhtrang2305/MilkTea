@@ -162,6 +162,7 @@ public class PaymentController extends HttpServlet {
     }
 
     private void checkOut(HttpServletRequest request, HttpServletResponse response) {
+        Product product = new Product();
         // lay ve cart
         HttpSession session = request.getSession();
         Order cart = (Order) session.getAttribute("cart");
@@ -192,7 +193,7 @@ public class PaymentController extends HttpServlet {
         }
         // khi da lay ra order > tru di so luong sp co trong Db
         ProductDAO productDAO = new ProductDAO();
-        productDAO.deleteById(orderId);
+        productDAO.deleteQuantity(amount, product);
         
         session.removeAttribute("cart");
     }

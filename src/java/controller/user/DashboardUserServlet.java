@@ -1,11 +1,15 @@
 package controller.user;
 
+import dal.implement.OrderDAO;
+import entity.Order;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 
 public class DashboardUserServlet extends HttpServlet {
@@ -27,11 +31,18 @@ public class DashboardUserServlet extends HttpServlet {
         }
     }
 
-   
+    OrderDAO orderDao = new OrderDAO();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("views/user/dashboard/dashboard.jsp").forward(request, response);
+        
+        HttpSession session = request.getSession();
+        
+        List<Order> listOrder = orderDao.findAll();
+        
+        session.setAttribute("listOrder", listOrder);
+        
+         request.getRequestDispatcher("views/user/dashboard/dashboard.jsp").forward(request, response);
     }
 
     @Override
@@ -39,5 +50,6 @@ public class DashboardUserServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+    
+    
 }
