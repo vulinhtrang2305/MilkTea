@@ -111,7 +111,6 @@ public class ProductDAO extends GenericDAO<Product> {
         return findTotalRecordGenericDAO(Product.class, sql, parameterMap);
     }
 
-    
     public void deleteById(int id) {
         String sql = "DELETE FROM [dbo].[Product] where [id] = ?";
         parameterMap = new LinkedHashMap<>();
@@ -142,7 +141,7 @@ public class ProductDAO extends GenericDAO<Product> {
     }
 
     public void deleteQuantity(int amount, Product product) {
-         String sql = "UPDATE [dbo].[Product]\n"
+        String sql = "UPDATE [dbo].[Product]\n"
                 + "   SET [quantity] = ?    \n"
                 + " WHERE id = ?";
 
@@ -151,4 +150,5 @@ public class ProductDAO extends GenericDAO<Product> {
         parameterMap.put("amount", product.getQuantity() - amount);
         updateGenericDAO(sql, parameterMap);
     }
+
 }

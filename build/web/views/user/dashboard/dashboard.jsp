@@ -105,7 +105,7 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
+                                                <th>ID Đơn Hàng</th>
                                                 <th>Amount</th>
                                                 <th>Account ID</th>
                                                 <th>Create At</th>

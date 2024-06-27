@@ -45,7 +45,7 @@
                             <!--admin-->
                             <c:if test="${account.roleId==1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/views/admin/dashboard.jsp">My Account</a>
+                                    <a href="${pageContext.request.contextPath}/admin/dashboard">My Account</a>
                                 </li>    
                             </c:if>
                         </c:if>

@@ -41,7 +41,7 @@ public class productAdminServlet extends HttpServlet {
                 ? ""
                 : request.getParameter("action");
 
-        switch (action) {
+        switch(action) {
             case "add":
                 addProduct(request);
                 break;
@@ -52,7 +52,7 @@ public class productAdminServlet extends HttpServlet {
                 editProduct(request);
                 break;
             default:
-
+            
         }
         response.sendRedirect("dashboard");
     }
@@ -113,7 +113,8 @@ public class productAdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("views/admin/dashborad.jsp").forward(request, response);
+//        request.getRequestDispatcher("dashboard").forward(request, response);
+        
     }
 
     private void deleteProduct(HttpServletRequest request) {
