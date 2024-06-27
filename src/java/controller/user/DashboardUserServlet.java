@@ -14,6 +14,8 @@ import java.util.List;
 
 public class DashboardUserServlet extends HttpServlet {
     
+    OrderDAO orderDao = new OrderDAO();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -31,7 +33,7 @@ public class DashboardUserServlet extends HttpServlet {
         }
     }
 
-    OrderDAO orderDao = new OrderDAO();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,7 +44,7 @@ public class DashboardUserServlet extends HttpServlet {
         
         session.setAttribute("listOrder", listOrder);
         
-         request.getRequestDispatcher("views/user/dashboard/dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("views/user/dashboard/dashboard.jsp").forward(request, response);
     }
 
     @Override
@@ -50,6 +52,4 @@ public class DashboardUserServlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
-    
 }

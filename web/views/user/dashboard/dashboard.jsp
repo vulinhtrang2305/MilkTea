@@ -108,12 +108,11 @@
                                                 <th>ID</th>
                                                 <th>Amount</th>
                                                 <th>Account ID</th>
-                                                <th>Account ID</th>
                                                 <th>Create At</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${sessionScope.listOrder}" var="c">
+                                        <c:forEach items="${listOrder}" var="c">
                                             <tr>
                                                 <td>${c.id}</td>
                                                 <td>${c.amount}</td>

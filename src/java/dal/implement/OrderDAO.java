@@ -17,30 +17,30 @@ public class OrderDAO extends GenericDAO<Order> {
 
     @Override
     public List<Order> findAll() {
-        return queryGenericDAO(Order.class);
+        String sql = "select * from [Order]";
+        parameterMap = new LinkedHashMap<>();
+        return queryGenericDAO(Order.class, sql, parameterMap);
     }
 
     @Override
     public int insert(Order t) {
-        String sql = "INSERT INTO [dbo].[Order]\n"
+        String sql = "INSERT INTO [Order]\n"
                 + "           ([amount]\n"
                 + "           ,[accountId]\n"
                 + "           ,[createAt])\n"
                 + "     VALUES\n"
-                + "           (?\n"
-                + "           ,?\n"
-                + "           ,?)";
-        
+                + "           (?,?,?)";
+
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("1", t.getAmount());
         parameterMap.put("2", t.getAccountId());
         parameterMap.put("3", t.getCreateAt());
-        return insertGenericDAO(t);
+        return insertGenericDAO(sql, parameterMap);
     }
-    
+
     public static void main(String[] args) {
         for (Order order : new OrderDAO().findAll()) {
-            System.out.println(order);  
+            System.out.println(order);
         }
     }
 }

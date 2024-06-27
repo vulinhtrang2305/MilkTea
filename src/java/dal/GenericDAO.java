@@ -1,20 +1,21 @@
-/*				
- * Copyright (C) FPT University , Ltd. 2023	
- * 30/09/2023 FPT 4USER
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dal;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.security.Timestamp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
 /**
  *
  * @author ADMIN
@@ -44,7 +45,7 @@ public abstract class GenericDAO<T> extends DBContext {
 
             // Tạo câu lệnh SELECT
             StringBuilder sqlBuilder = new StringBuilder();
-            sqlBuilder.append("SELECT * FROM ").append(clazz.getSimpleName());
+            sqlBuilder.append("SELECT * FROM dbo.").append(clazz.getSimpleName());
 
             // Chuẩn bị câu lệnh
             statement = connection.prepareStatement(sqlBuilder.toString());
@@ -68,8 +69,7 @@ public abstract class GenericDAO<T> extends DBContext {
                 | NoSuchMethodException
                 | InvocationTargetException
                 | SQLException e) {
-//            System.err.println(": Bắn Exception ở hàm query: " + e.getMessage());
- e.printStackTrace();
+            System.err.println("4USER: Bắn Exception ở hàm query: " + e.getMessage());
         } finally {
             try {
                 // Đóng kết nối và các tài nguyên
@@ -89,8 +89,6 @@ public abstract class GenericDAO<T> extends DBContext {
         return result;
     }
 
-    
-    
     /**
      * Hàm này sử dụng để get dữ liệu từ database lên dựa trên tên bảng mà bạn
      * mong muốn Condition (optional) là ám chỉ những giá trị như and hoặc
@@ -212,8 +210,8 @@ public abstract class GenericDAO<T> extends DBContext {
 
         Class<?> fieldType = field.getType();
         String fieldName = field.getName();
-       
-         // Kiểm tra xem fieldType có phải là một collection (như List, Set, ...) hay không
+
+        // Kiểm tra xem fieldType có phải là một collection (như List, Set, ...) hay không
         if (Collection.class.isAssignableFrom(fieldType)) {
             return null; // Bỏ qua và không xử lý gì nữa
         } // Kiểm tra xem fieldType có phải là một Map hay không
@@ -221,7 +219,6 @@ public abstract class GenericDAO<T> extends DBContext {
             return null; // Bỏ qua và không xử lý gì nữa
         }
 
-       
         // Kiểm tra kiểu dữ liệu và convert sang đúng kiểu
         if (fieldType == String.class) {
             return rs.getString(fieldName);
@@ -446,7 +443,7 @@ public abstract class GenericDAO<T> extends DBContext {
         // Trả về ID được tạo tự động (nếu có)
         return id;
     }
-    
+
     protected int insertGenericDAO(String sql, Map<String, Object> parameterMap) {
         List<Object> parameters = new ArrayList<>();
 
@@ -633,9 +630,9 @@ public abstract class GenericDAO<T> extends DBContext {
         }
         return total;
     }
-    
+
     public abstract List<T> findAll();
-    
+
     public abstract int insert(T t);
 
 }
