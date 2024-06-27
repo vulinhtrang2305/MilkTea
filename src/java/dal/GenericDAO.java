@@ -45,7 +45,7 @@ public abstract class GenericDAO<T> extends DBContext {
 
             // Tạo câu lệnh SELECT
             StringBuilder sqlBuilder = new StringBuilder();
-            sqlBuilder.append("SELECT * FROM dbo.").append(clazz.getSimpleName());
+            sqlBuilder.append("SELECT * FROM ").append(clazz.getSimpleName());
 
             // Chuẩn bị câu lệnh
             statement = connection.prepareStatement(sqlBuilder.toString());

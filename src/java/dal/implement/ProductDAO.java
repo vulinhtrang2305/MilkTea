@@ -88,13 +88,30 @@ public class ProductDAO extends GenericDAO<Product> {
         return findTotalRecordGenericDAO(Product.class, sql, parameterMap);
     }
 
-    public int searchByName(String keyword) {
-        String sql = "SELECT COUNT(*) FROM [dbo].[Product] where [name] like ?";
+    public List<Product> searchByName(String keyword, int page) {
+        String sql = "SELECT *\n"
+                + "  FROM [Product]\n"
+                + "  where [name] like ?"
+                + "  ORDER BY id\n"
+                + "  OFFSET ? ROWS\n" //( PAGE - 1 ) * Y
+                + "  FETCH NEXT ? ROWS ONLY"; // NUMBER_RECORD_PER_PAGE
+        parameterMap = new LinkedHashMap<>();
+        parameterMap.put("name", "%" + keyword + "%");
+        parameterMap.put("offset", (page - 1) * CommonConst.RECORD_PER_PAGE);
+        parameterMap.put("fetch", CommonConst.RECORD_PER_PAGE);
+        return queryGenericDAO(Product.class, sql, parameterMap);
+    }
+
+    public int findTotalRecordByName(String keyword) {
+        String sql = "SELECT count(*)\n"
+                + "  FROM Product\n"
+                + "  where [name] like ?";
         parameterMap = new LinkedHashMap<>();
         parameterMap.put("name", "%" + keyword + "%");
         return findTotalRecordGenericDAO(Product.class, sql, parameterMap);
     }
 
+    
     public void deleteById(int id) {
         String sql = "DELETE FROM [dbo].[Product] where [id] = ?";
         parameterMap = new LinkedHashMap<>();

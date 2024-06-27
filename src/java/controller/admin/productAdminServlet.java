@@ -38,7 +38,7 @@ public class productAdminServlet extends HttpServlet {
 
         // get ra action cua nguoi dung (add, edit or delete ...)
         String action = request.getParameter("action") == null
-                ? "default"
+                ? ""
                 : request.getParameter("action");
 
         switch (action) {
@@ -113,6 +113,7 @@ public class productAdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.getRequestDispatcher("views/admin/dashborad.jsp").forward(request, response);
     }
 
     private void deleteProduct(HttpServletRequest request) {

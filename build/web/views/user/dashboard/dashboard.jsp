@@ -116,7 +116,7 @@
                                             <tr>
                                                 <td>${c.id}</td>
                                                 <td>${c.amount}</td>
-                                                <td>${c.accountId}</td>
+                                                <td>${c.accountId=='2' ? "user" : "admin"}</td>
                                                 <td>${c.createAt}</td>
                                             </tr>
                                         </c:forEach>

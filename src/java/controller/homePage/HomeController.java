@@ -139,11 +139,17 @@ public class HomeController extends HttpServlet {
                 break;
                 
             case "searchByName":
-                String keyword = request.getParameter("keyword");
-                // find by name
+//                String keyword = request.getParameter("keyword");
+//                // find by name
+//                listProduct = productDao.findByKeyWord(keyword);
+//                //searchByname (phan trang)
+//                totalRecord = productDao.searchByName(keyword, page);
+//                pageControl.setUrlPattern(requestURL + "?search=searchByName&keyword=" + keyword + "&");
+                
+                  String keyword = request.getParameter("keyword");
                 listProduct = productDao.findByKeyWord(keyword);
-                //searchByname (phan trang)
-                totalRecord = productDao.searchByName(keyword);
+                totalRecord = productDao.findTotalRecordByName(keyword);
+                listProduct = productDao.searchByName(keyword, page);
                 pageControl.setUrlPattern(requestURL + "?search=searchByName&keyword=" + keyword + "&");
                 break;
                 
