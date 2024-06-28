@@ -120,9 +120,9 @@ public class HomeController extends HttpServlet {
         }
         
         // get ve thang search ben home.jsp
-        String actionSearch = request.getParameter("action") == null
-                            ? "default"
-                            : request.getParameter("action");
+        String actionSearch = request.getParameter("search") == null
+                            ? ""
+                            : request.getParameter("search");
         
         //  get ve request url
         String requestURL = request.getRequestURL().toString();

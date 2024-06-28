@@ -230,7 +230,7 @@
                                     <div class="product-total-2">
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/20.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Mang-Cau-Xoai.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -242,7 +242,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Endeavor Daytrip</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Xanh Nhài Mãng Cầu Xoài</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -253,7 +253,7 @@
                                         </div>
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/21.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Dua-Pho-Mai-Tuoi.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -265,7 +265,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Savvy Shoulder Tote</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Xanh Nhài Sữa Dừa Phô Mai Tươi</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -276,7 +276,7 @@
                                         </div>
                                         <div class="single-most-product">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/06/Xanh-Nhai-Sua-Toco_Tea.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -288,7 +288,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Compete Track Tote</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Xanh Nhài Sữa Tươi Toco</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$35.00</li>
@@ -300,7 +300,7 @@
                                     <div class="product-total-2">
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/23.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/04/O-long-sua-tuoi.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -312,7 +312,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Voyage Yoga Bag</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Ô Long Sữa Tươi</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$30.00</li>
@@ -323,7 +323,7 @@
                                         </div>
                                         <div class="single-most-product bd mb-18">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/24.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/04/Oolong-Dao-Que-Hoa-Kem-Cheese.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -335,7 +335,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Impulse Duffle</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Ô Long Đào Quế Hoa Kem Cheese</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$70.00</li>
@@ -346,7 +346,7 @@
                                         </div>
                                         <div class="single-most-product">
                                             <div class="most-product-img">
-                                                <a href="${pageContext.request.contextPath}/#"><img src="${pageContext.request.contextPath}/img/product/22.jpg" alt="book" /></a>
+                                                <a href="${pageContext.request.contextPath}/#"><img src="https://tocotocotea.com/wp-content/uploads/2024/04/phe-sua-kem-cheese.png" alt="book" /></a>
                                             </div>
                                             <div class="most-product-content">
                                                 <div class="product-rating">
@@ -358,7 +358,7 @@
                                                         <li><a href="${pageContext.request.contextPath}/#"><i class="fa fa-star"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <h4><a href="${pageContext.request.contextPath}/#">Fusion Backpack</a></h4>
+                                                <h4><a href="${pageContext.request.contextPath}/#">Phê Sữa Kem Cheese</a></h4>
                                                 <div class="product-price">
                                                     <ul>
                                                         <li>$59.00</li>

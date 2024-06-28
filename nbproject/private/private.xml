@@ -3,11 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PRJ301/MilkTea/src/java/controller/admin/productAdminServlet.java</file>
-            <file>file:/D:/PRJ301/MilkTea/web/views/homePage/product-details.jsp</file>
-            <file>file:/D:/PRJ301/MilkTea/src/java/dal/implement/ProductDAO.java</file>
-            <file>file:/D:/PRJ301/MilkTea/web/views/admin/dashboard.jsp</file>
-            <file>file:/D:/PRJ301/MilkTea/web/views/admin/deleteProductModal.jsp</file>
+            <file>file:/D:/PRJ301/MilkTea/web/views/common/header-top-area.jsp</file>
         </group>
     </open-files>
 </project-private>
